@@ -218,6 +218,91 @@
     .tag-beach,
     .tag-cafe,
     .tag-shop { background: #dcfce7; color: #15803d; }
+    .tag-new { background: #dbeafe; color: #1d4ed8; }
+
+    .flow {
+      margin-top: 12px;
+      background: var(--card);
+      border: 1px solid #e8edf3;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .flow-row {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 8px;
+      padding: 10px 12px;
+      border-top: 1px solid var(--line);
+      align-items: start;
+    }
+
+    .flow-row:first-child { border-top: none; }
+
+    .flow-day {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--navy);
+      word-break: keep-all;
+    }
+
+    .flow-core {
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: #4b5563;
+      word-break: keep-all;
+      line-height: 1.45;
+    }
+
+    .weather {
+      margin-top: 12px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 16px;
+      padding: 12px 14px;
+    }
+
+    .weather h2 {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #9a3412;
+      margin-bottom: 6px;
+    }
+
+    .weather p {
+      font-size: 0.75rem;
+      color: #7c2d12;
+      font-weight: 600;
+      line-height: 1.5;
+      word-break: keep-all;
+    }
+
+    .note {
+      margin: 10px 12px 0;
+      padding: 10px 12px;
+      background: #fff7ed;
+      color: #9a3412;
+      border-radius: 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 1.5;
+      word-break: keep-all;
+    }
+
+    .leg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin: 4px 12px;
+      padding: 7px 10px;
+      background: #f8fafc;
+      color: #64748b;
+      font-size: 0.72rem;
+      font-weight: 700;
+      border-radius: 8px;
+      word-break: keep-all;
+    }
 
     .desc {
       font-size: 0.78rem;
@@ -318,11 +403,31 @@
       </div>
     </section>
 
+    <section class="flow" aria-label="최종 여행 흐름">
+      <div class="flow-row">
+        <span class="flow-day">1일차 🌺 휴양</span>
+        <span class="flow-core">춘심이네 → 카멜리아힐 → 히든클리프 → 숙성도</span>
+      </div>
+      <div class="flow-row">
+        <span class="flow-day">2일차 🌲 숲·동부</span>
+        <span class="flow-core">사려니 → 에코랜드 → 낭뜰에쉼팡 → 섭지코지 → 성산·광치기 → 로빙화</span>
+      </div>
+      <div class="flow-row">
+        <span class="flow-day">3일차 🌊 절경</span>
+        <span class="flow-core">색달해변 → 주상절리 → 돌문어전골 → 정방폭포 → 공항</span>
+      </div>
+    </section>
+
+    <aside class="weather" aria-label="날씨 참고">
+      <h2>8/24~26 제주 날씨 (기상청 8/23 05시)</h2>
+      <p>24일 가끔 구름 26~33도 · 25~26일 대체로 맑음 26~32도. 비 예보 없음, 무더위·열대야 주의. 더우면 2일차 사려니숲길은 과감히 생략.</p>
+    </aside>
+
     <!-- DAY 1 -->
     <section class="day" id="day1">
       <div class="day-head">
         <h2>📌 1일차 : 8월 24일 (월)</h2>
-        <span class="area-badge">중문·안덕 권역</span>
+        <span class="area-badge">중문·안덕 / 휴양</span>
       </div>
 
       <div class="route">
@@ -343,16 +448,18 @@
           <div class="time">09:30 -<br />10:30</div>
           <div>
             <div class="title-row">
-              <h3 class="title">제주공항 도착 &amp; 현대제주렌트카 인수</h3>
+              <h3 class="title">제주공항 도착 &amp; 스타리아 렌트</h3>
               <span class="tag tag-move">이동</span>
             </div>
-            <p class="desc">09:30 현대제주렌트카에서 스타리아 수령 후 평화로 이용 중문 방향 이동</p>
+            <p class="desc">09:30 제주공항 도착 후 현대제주렌트카에서 스타리아 수령</p>
           </div>
           <a class="map-btn" href="https://map.kakao.com/link/map/8433016" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
             지도
           </a>
         </article>
+
+        <div class="leg">↓ 10:30~11:40 · 운전 약 40분 · 36km · 주차·여유 포함 70분</div>
 
         <article class="item">
           <div class="time">11:40 -<br />12:50</div>
@@ -361,13 +468,15 @@
               <h3 class="title">점심: 춘심이네 본점</h3>
               <span class="tag tag-meal">식사</span>
             </div>
-            <p class="desc">왕갈치구이 및 조림 (대형 전용 주차장 완비)</p>
+            <p class="desc">왕갈치구이 / 갈치조림 (대형 전용 주차장 완비)</p>
           </div>
           <a class="map-btn" href="https://map.kakao.com/link/map/19316749" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
             지도
           </a>
         </article>
+
+        <div class="leg">↓ 12:50~13:00 · 운전 약 6분 · 4km</div>
 
         <article class="item">
           <div class="time">13:00 -<br />14:30</div>
@@ -376,13 +485,15 @@
               <h3 class="title">카멜리아 힐</h3>
               <span class="tag tag-sight">관람</span>
             </div>
-            <p class="desc">온실 수국, 백일홍, 유럽수국 관람 및 수목원 산책</p>
+            <p class="desc">수국·정원 산책 (온실 수국, 백일홍, 유럽수국)</p>
           </div>
           <a class="map-btn" href="https://map.kakao.com/link/map/9461977" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
             지도
           </a>
         </article>
+
+        <div class="leg">↓ 14:30~14:40 · 운전 약 11분 · 8km</div>
 
         <article class="item">
           <div class="time">14:40 -<br />18:00</div>
@@ -391,13 +502,15 @@
               <h3 class="title">히든 클리프 호텔 체크인 &amp; 휴식</h3>
               <span class="tag tag-stay">숙소</span>
             </div>
-            <p class="desc">객실 정돈 및 온수 인피니티 풀 이용</p>
+            <p class="desc">휴식 · 온수 인피니티 풀</p>
           </div>
           <a class="map-btn" href="https://map.kakao.com/link/map/1220460107" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
             지도
           </a>
         </article>
+
+        <div class="leg">↓ 18:00~18:30 · 운전 약 3분 · 2km</div>
 
         <article class="item">
           <div class="time">18:30 -<br />20:00</div>
@@ -406,13 +519,15 @@
               <h3 class="title">저녁: 숙성도 중문점</h3>
               <span class="tag tag-meal">식사</span>
             </div>
-            <p class="desc">프리미엄 숙성 흑돼지 (대형 주차장, 아기 의자 보유)</p>
+            <p class="desc">숙성 흑돼지 (대형 주차장, 아기 의자 보유)</p>
           </div>
           <a class="map-btn" href="https://map.kakao.com/link/map/204534740" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
             지도
           </a>
         </article>
+
+        <div class="leg">↓ 20:00~20:15 · 운전 약 3분 · 호텔 복귀</div>
 
         <article class="item">
           <div class="time">20:15 -</div>
@@ -435,16 +550,18 @@
     <section class="day" id="day2">
       <div class="day-head">
         <h2>📌 2일차 : 8월 25일 (화)</h2>
-        <span class="area-badge">동부권 투어</span>
+        <span class="area-badge">숲 + 동부 해안</span>
       </div>
 
       <div class="route">
-        🚗 2일차 이동 동선: 히든 클리프 → 사려니숲길 → 교래곶자왈손칼국수 → 성산일출봉 → 로빙화
+        🚗 2일차 이동 동선: 히든 클리프 → 사려니숲길 → 에코랜드 → 낭뜰에쉼팡 → 섭지코지 → 성산일출봉·광치기해변 → 로빙화
       </div>
+
+      <p class="note">더위·체력에 따라 아침 사려니숲길은 과감히 빼고 에코랜드부터 여유롭게 시작해도 됩니다. 빛의 벙커는 삭제.</p>
 
       <a
         class="drive-btn"
-        href="https://map.kakao.com/link/by/car/%ED%9E%88%EB%93%A0%ED%81%B4%EB%A6%AC%ED%94%84%ED%98%B8%ED%85%94,33.2547287,126.40259546/%EC%82%AC%EB%A0%A4%EB%8B%88%EC%88%B2%EA%B8%B8%EB%B6%89%EC%9D%80%EC%98%A4%EB%A6%84%EC%9E%85%EA%B5%AC,33.39517133,126.68506763/%EA%B5%90%EB%9E%98%EA%B3%B6%EC%9E%90%EC%99%88%EC%86%90%EC%B9%BC%EA%B5%AD%EC%88%98,33.43448017,126.67611215/%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89,33.45913497,126.94053752/%EB%A1%9C%EB%B9%99%ED%99%94,33.27510341,126.70925249"
+        href="https://map.kakao.com/link/by/car/%ED%9E%88%EB%93%A0%ED%81%B4%EB%A6%AC%ED%94%84%ED%98%B8%ED%85%94,33.2547287,126.40259546/%EC%82%AC%EB%A0%A4%EB%8B%88%EC%88%B2%EA%B8%B8%EB%B6%89%EC%9D%80%EC%98%A4%EB%A6%84%EC%9E%85%EA%B5%AC,33.39517133,126.68506763/%EC%97%90%EC%BD%94%EB%9E%9C%EB%93%9C,33.4475725,126.6720715/%EB%82%AD%EB%9C%B0%EC%97%90%EC%89%BC%ED%8C%A1,33.4735994,126.6571836/%EC%84%AD%EC%A7%80%EC%BD%94%EC%A7%80,33.4240410,126.9307306/%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89,33.45913497,126.94053752/%EB%A1%9C%EB%B9%99%ED%99%94,33.27510341,126.70925249"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -467,20 +584,24 @@
           </a>
         </article>
 
+        <div class="leg">↓ 09:30~10:20 · 운전 약 46분 · 42km</div>
+
         <article class="item">
-          <div class="time">10:20 -<br />11:30</div>
+          <div class="time">10:20 -<br />11:20</div>
           <div>
             <div class="title-row">
               <h3 class="title">사려니숲길 (붉은오름 입구)</h3>
               <span class="tag tag-sight">관람</span>
             </div>
-            <p class="desc">삼나무 숲길 평탄한 무장애 산책로 산책</p>
+            <p class="desc">1시간 정도 가볍게 산책 · 평탄한 삼나무 숲길</p>
           </div>
           <a class="map-btn" href="https://map.kakao.com/link/map/27296459" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
             지도
           </a>
         </article>
+
+        <div class="leg">↓ 11:20~11:40 · 운전 약 12분 · 8km</div>
 
         <article class="item">
           <div class="time">11:40 -<br />12:50</div>
@@ -489,7 +610,7 @@
               <h3 class="title">에코랜드 테마파크</h3>
               <span class="tag tag-sight">관람</span>
             </div>
-            <p class="desc">곶자왈 기차 순환 관람</p>
+            <p class="desc">곶자왈 기차 · 모든 역을 오래 보기보다 핵심 위주</p>
           </div>
           <a class="map-btn" href="https://map.kakao.com/link/map/17184223" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
@@ -497,35 +618,42 @@
           </a>
         </article>
 
+        <div class="leg">↓ 12:50~13:00 · 운전 약 9분 · 6km</div>
+
         <article class="item">
           <div class="time">13:00 -<br />14:00</div>
           <div>
             <div class="title-row">
-              <h3 class="title">점심: 교래곶자왈손칼국수</h3>
+              <h3 class="title">점심: 낭뜰에쉼팡</h3>
               <span class="tag tag-meal">식사</span>
             </div>
-            <p class="desc">토종닭칼국수, 바지락칼국수, 메밀전 (주차 용이)</p>
+            <p class="desc">낭뜰정식 (고등어구이·흑돼지 제육볶음·된장찌개 한 상). 7명 가족·주차 가능</p>
           </div>
-          <a class="map-btn" href="https://map.kakao.com/link/map/21929953" target="_blank" rel="noopener noreferrer">
+          <a class="map-btn" href="https://map.kakao.com/link/map/%EB%82%AD%EB%9C%B0%EC%97%90%EC%89%BC%ED%8C%A1,33.4735994,126.6571836" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
             지도
           </a>
         </article>
 
+        <div class="leg">↓ 14:00~15:00 · 성산 방향 · 운전 약 37분 · 31km</div>
+
         <article class="item">
-          <div class="time">15:00 -<br />16:10</div>
+          <div class="time">15:00 -<br />16:15</div>
           <div>
             <div class="title-row">
-              <h3 class="title">빛의 벙커</h3>
+              <h3 class="title">섭지코지</h3>
               <span class="tag tag-sight">관람</span>
+              <span class="tag tag-new">NEW</span>
             </div>
-            <p class="desc">실내 미디어아트 전시 관람</p>
+            <p class="desc">빛의 벙커 대신 추가 · 해안 산책</p>
           </div>
-          <a class="map-btn" href="https://map.kakao.com/link/map/1682547680" target="_blank" rel="noopener noreferrer">
+          <a class="map-btn" href="https://map.kakao.com/link/map/%EC%84%AD%EC%A7%80%EC%BD%94%EC%A7%80,33.4240410,126.9307306" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
             지도
           </a>
         </article>
+
+        <div class="leg">↓ 16:15~16:30 · 운전 약 10분 · 6km</div>
 
         <article class="item">
           <div class="time">16:30 -<br />17:40</div>
@@ -534,13 +662,15 @@
               <h3 class="title">성산일출봉 &amp; 광치기해변</h3>
               <span class="tag tag-sight">관람</span>
             </div>
-            <p class="desc">광치기해변 경관 감상 및 성산일출봉 해안 산책로</p>
+            <p class="desc">정상 등반보다 해안 산책·풍경 감상. 체력이 떨어지면 광치기해변 생략</p>
           </div>
           <a class="map-btn" href="https://map.kakao.com/link/map/13723499" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
             지도
           </a>
         </article>
+
+        <div class="leg">↓ 17:40~18:20 · 남원 방향 · 운전 약 38분 · 33km</div>
 
         <article class="item">
           <div class="time">18:20 -<br />19:50</div>
@@ -549,13 +679,15 @@
               <h3 class="title">저녁: 로빙화</h3>
               <span class="tag tag-meal">식사</span>
             </div>
-            <p class="desc">남원 큰엉 오션뷰 피자·수제버거 / 아이 의자 / 큰엉 공영주차장 또는 가게 옆 주차 (7명이라 예약 권장)</p>
+            <p class="desc">오션뷰 피자·수제버거 / 아이 의자 / 큰엉 공영주차장 또는 가게 옆 주차 (7명이라 예약 권장)</p>
           </div>
           <a class="map-btn" href="https://map.kakao.com/link/map/1658038483" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
             지도
           </a>
         </article>
+
+        <div class="leg">↓ 19:50~ · 호텔 복귀 · 운전 약 36분 · 32km · 도착 20:30 전후</div>
       </div>
     </section>
 
@@ -563,16 +695,18 @@
     <section class="day" id="day3">
       <div class="day-head">
         <h2>📌 3일차 : 8월 26일 (수)</h2>
-        <span class="area-badge">중문권 · 한림 · 제주시</span>
+        <span class="area-badge">해변 · 주상절리 · 폭포</span>
       </div>
 
       <div class="route">
-        🚗 3일차 이동 동선: 히든 클리프 → 중문 색달해수욕장 → 주상절리대 → 담백솥밥 중문점 → 카페 바크모스 → 동문시장 → 현대제주렌트카 반납 → 제주공항
+        🚗 3일차 이동 동선: 히든 클리프 → 중문 색달해수욕장 → 대포 주상절리대 → 제주미향 중문본점 → 정방폭포 → 현대제주렌트카 반납 → 제주공항
       </div>
+
+      <p class="note">담백솥밥 · 바크모스 · 동문시장은 삭제. 해수욕이 목적이 아니면 색달해변은 40~45분이면 충분합니다.</p>
 
       <a
         class="drive-btn"
-        href="https://map.kakao.com/link/by/car/%ED%9E%88%EB%93%A0%ED%81%B4%EB%A6%AC%ED%94%84%ED%98%B8%ED%85%94,33.2547287,126.40259546/%EC%A4%91%EB%AC%B8%EC%83%89%EB%8B%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5,33.24503815,126.41149867/%EC%A4%91%EB%AC%B8%EB%8C%80%ED%8F%AC%EC%A3%BC%EC%83%81%EC%A0%88%EB%A6%AC%EB%8C%80,33.23798495,126.42601106/%EB%B0%94%ED%81%AC%EB%AA%A8%EC%8A%A4,33.38063333,126.30912988/%EC%A0%9C%EC%A3%BC%EB%8F%99%EB%AC%B8%EC%8B%9C%EC%9E%A5,33.51278396,126.52830339"
+        href="https://map.kakao.com/link/by/car/%ED%9E%88%EB%93%A0%ED%81%B4%EB%A6%AC%ED%94%84%ED%98%B8%ED%85%94,33.2547287,126.40259546/%EC%A4%91%EB%AC%B8%EC%83%89%EB%8B%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5,33.24503815,126.41149867/%EC%A4%91%EB%AC%B8%EB%8C%80%ED%8F%AC%EC%A3%BC%EC%83%81%EC%A0%88%EB%A6%AC%EB%8C%80,33.23798495,126.42601106/%EC%A0%9C%EC%A3%BC%EB%AF%B8%ED%96%A5%EC%A4%91%EB%AC%B8%EB%B3%B8%EC%A0%90,33.2550722,126.4164647/%EC%A0%95%EB%B0%A9%ED%8F%AD%ED%8F%AC,33.2448578,126.5715451/%ED%98%84%EB%8C%80%EC%A0%9C%EC%A3%BC%EB%A0%8C%ED%8A%B8%EC%B9%B4,33.51777786,126.49602179"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -581,13 +715,13 @@
 
       <div class="items">
         <article class="item">
-          <div class="time">09:40</div>
+          <div class="time">09:00 -<br />09:20</div>
           <div>
             <div class="title-row">
               <h3 class="title">히든 클리프 호텔 체크아웃</h3>
               <span class="tag tag-checkout">체크아웃</span>
             </div>
-            <p class="desc">체크아웃 후 숙소 인근 중문 색달해수욕장으로 이동</p>
+            <p class="desc">짐 정리 후 숙소 인근 색달해변으로 출발</p>
           </div>
           <a class="map-btn" href="https://map.kakao.com/link/map/1220460107" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
@@ -595,14 +729,16 @@
           </a>
         </article>
 
+        <div class="leg">↓ 09:20~09:30 · 운전 약 5분 · 3km</div>
+
         <article class="item">
-          <div class="time">10:00 -<br />11:10</div>
+          <div class="time">09:30 -<br />10:15</div>
           <div>
             <div class="title-row">
               <h3 class="title">중문 색달해수욕장</h3>
               <span class="tag tag-beach">해변</span>
             </div>
-            <p class="desc">검은 모래 해변 산책 및 아이들과 모래놀이 (중문관광단지 인근)</p>
+            <p class="desc">아침 해변 산책 · 아이들과 모래놀이. 해수욕이 아니면 40~45분이면 충분</p>
           </div>
           <a class="map-btn" href="https://map.kakao.com/link/map/8069764" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
@@ -610,14 +746,16 @@
           </a>
         </article>
 
+        <div class="leg">↓ 10:15~10:30 · 운전 약 7분 · 3km</div>
+
         <article class="item">
-          <div class="time">11:20 -<br />12:10</div>
+          <div class="time">10:30 -<br />11:20</div>
           <div>
             <div class="title-row">
-              <h3 class="title">중문 주상절리대</h3>
+              <h3 class="title">대포 주상절리대</h3>
               <span class="tag tag-sight">관람</span>
             </div>
-            <p class="desc">대포 해안 주상절리 경관 관람 및 산책</p>
+            <p class="desc">제주 해안 절경 감상</p>
           </div>
           <a class="map-btn" href="https://map.kakao.com/link/map/10793668" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
@@ -625,59 +763,51 @@
           </a>
         </article>
 
+        <div class="leg">↓ 11:20~11:30 · 운전 약 5분 · 3km</div>
+
         <article class="item">
-          <div class="time">12:20 -<br />13:20</div>
+          <div class="time">11:30 -<br />12:40</div>
           <div>
             <div class="title-row">
-              <h3 class="title">점심: 담백솥밥 중문점</h3>
+              <h3 class="title">점심: 제주미향 중문본점</h3>
               <span class="tag tag-meal">식사</span>
             </div>
-            <p class="desc">갈치·전복·흑돼지 솥밥 (갈치 가시 제거) / 아이 동반 무난 / 인근 주차장</p>
+            <p class="desc">돌문어 해물전골 (4인 70,000원 / 2인 45,000원). 7명이면 4인+2인 전골 + 추가 메뉴. 주차 가능</p>
           </div>
-          <a class="map-btn" href="https://map.kakao.com/link/map/1903947818" target="_blank" rel="noopener noreferrer">
+          <a class="map-btn" href="https://map.kakao.com/link/map/%EC%A0%9C%EC%A3%BC%EB%AF%B8%ED%96%A5%EC%A4%91%EB%AC%B8%EB%B3%B8%EC%A0%90,33.2550722,126.4164647" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
             지도
           </a>
         </article>
 
+        <div class="leg">↓ 12:40~13:10 · 운전 약 18분 · 16km</div>
+
         <article class="item">
-          <div class="time">14:20 -<br />15:10</div>
+          <div class="time">13:10 -<br />14:00</div>
           <div>
             <div class="title-row">
-              <h3 class="title">카페 바크모스</h3>
-              <span class="tag tag-cafe">카페</span>
+              <h3 class="title">정방폭포</h3>
+              <span class="tag tag-sight">관람</span>
+              <span class="tag tag-new">NEW</span>
             </div>
-            <p class="desc">제주시 한림읍 광산로 332 위치 / 커피 및 디저트 휴식</p>
+            <p class="desc">바다로 떨어지는 서귀포 폭포 관람 후 공항 방향 출발</p>
           </div>
-          <a class="map-btn" href="https://map.kakao.com/link/map/870735545" target="_blank" rel="noopener noreferrer">
+          <a class="map-btn" href="https://map.kakao.com/link/map/%EC%A0%95%EB%B0%A9%ED%8F%AD%ED%8F%AC,33.2448578,126.5715451" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
             지도
           </a>
         </article>
 
-        <article class="item">
-          <div class="time">15:30 -<br />15:50</div>
-          <div>
-            <div class="title-row">
-              <h3 class="title">제주 동문시장</h3>
-              <span class="tag tag-shop">쇼핑</span>
-            </div>
-            <p class="desc">제주 특산물 및 기념품 구매 (짧게 들른 뒤 렌트카 반납)</p>
-          </div>
-          <a class="map-btn" href="https://map.kakao.com/link/map/1262338999" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
-            지도
-          </a>
-        </article>
+        <div class="leg">↓ 14:00~ · 제주공항 방향 · 운전 약 59분 · 49km</div>
 
         <article class="item">
-          <div class="time">16:00 -</div>
+          <div class="time">15:20 -<br />15:40</div>
           <div>
             <div class="title-row">
-              <h3 class="title">현대제주렌트카 반납 &amp; 제주공항 이동</h3>
+              <h3 class="title">렌터카 반납 &amp; 제주공항</h3>
               <span class="tag tag-home">귀가</span>
             </div>
-            <p class="desc">16:00 현대제주렌트카에 렌트카 반납 완료 후 공항 이동 및 수속</p>
+            <p class="desc">15:20~15:40 전후 현대제주렌트카 반납 후 공항 이동 및 수속</p>
           </div>
           <a class="map-btn" href="https://map.kakao.com/link/map/8433016" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
